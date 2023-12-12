@@ -38,7 +38,7 @@ Resources:
       MasterUsername: !Sub '{{resolve:ssm:/poja-prime/${Env}/db/username}}'
       MasterUserPassword: !Sub '{{resolve:ssm:/poja-prime/${Env}/db/password}}'
       VpcSecurityGroupIds:
-        - !Sub '{{resolve:ssm:C:/Program Files/Git/poja/sg/id}}'
+        - !Sub '{{resolve:ssm:/poja/sg/id}}'
       ScalingConfiguration:
         SecondsUntilAutoPause:
           !If [ IsProdEnv,  !Ref ProdDbClusterTimeout, 300 ]
